@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 			String imageUrl = mImageUrlPaths.get(mCurrentIndex);
 			URL url=new URL(imageUrl);
 			//2.打开一个链接
-			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			//3.判断是否能够获取资源 通过状态码来判断
 			int responseCode = conn.getResponseCode();
 			if (responseCode==200) {
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 			//1.创建一个Url对象
 			URL url=new URL(getImageUrls());
 			//2.打开一个链接
-			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			//3.判断是否能够获取资源 通过状态码来判断
 			int responseCode = conn.getResponseCode();
 			if (responseCode==200) {
@@ -92,7 +92,7 @@ public class MainActivity extends Activity {
 	 * 获取网络地址
 	 */
 	private String getImageUrls(){
-		return "https://freenas.ga/poto.txt";
+		return "http://nas.freenas.ga:7070/myweb1/imageAndroid.txt";
 	}
 
 	public void preClick(View view) {
